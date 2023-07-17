@@ -1,1 +1,44 @@
-<p>member-details works!</p>
+<section *ngIf="member">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.knownAs}}" class="rounded-circle img-fluid"
+                        style="width: 150px;">
+                    <h5 class="my-3">{{member.knownAs}}</h5>
+
+                    <p class="text-muted mb-1 align-left"><i class="fa fa-circle me-2" style="color: #00ff04;"></i>Last
+                        Active : {{member.lastActive}}</p>
+                    <p class="text-muted mb-1 align-left"><i class="fa fa-calendar me-2"
+                            style="color: #ffdd61;"></i>Date Created : {{member.dateCreated}}</p>
+                    <p class="text-muted mb-1 align-left"><i class="fa fa-birthday-cake me-2"
+                            style="color: #e51553;"></i>Age : {{member.age}}</p>
+                    <p class="text-muted mb-4 align-left"><i class="fa fa-globe me-2"
+                            style="color: #e67a00;"></i>Location : {{member.country}}, {{member.city}}</p>
+                    <div class="d-flex justify-content-center mb-2">
+                        <button type="button" class="btn btn-primary">Like</button>
+                        <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <tabset class="member-tabset">
+                <tab heading="About {{member.knownAs}}">
+                    <h3>Bio</h3>
+                    <p>{{member.biography}}</p>
+                </tab>
+                <tab heading="Interests">
+                    <h3>Interests</h3>
+                    <p>{{member.interests}}</p>
+                </tab>
+                <tab heading="Photo Gallery">
+                    <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+                </tab>
+                <tab heading="Messages">
+                    <h3>Messages</h3>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</section>
