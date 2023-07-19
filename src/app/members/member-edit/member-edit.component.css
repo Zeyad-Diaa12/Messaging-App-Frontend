@@ -1,0 +1,25 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #65a2f6;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgb(101, 111, 246), rgb(145, 133, 253));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgb(149, 101, 246), rgbargb(133, 231, 253));
+}
+
+.align-left {
+    text-align: left;
+}
+
+.ngx-gallery {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
+}
